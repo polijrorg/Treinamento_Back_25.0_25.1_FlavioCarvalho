@@ -24,7 +24,7 @@ class Users {
         this.cpf = cpf;
         this.email = email;
         this.created_at = new Date (created_at);
-        this.updated_at = new Date (updated_at);
+        this.updated_at = new Date (updated_at); //teste
     }
 }
 
