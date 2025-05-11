@@ -43,8 +43,12 @@ piusRouter.post('/', (req, res) => {
 // - chama a função de obter todos os pius do repositorio
 // - retorna os usuarios obtidos
 piusRouter.get('/getAll', (req, res) => {
-    const pius = piusRepository.getAll();    
-    return res.status(200).json(pius);
+    try{
+        const pius = piusRepository.getAll();    
+        return res.status(200).json(pius);
+    } catch(err: unknown){
+        return res.status(400).json({ error: (err as Error).message });
+    };
 });
 
 // Rota de deleção de piu:
